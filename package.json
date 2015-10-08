@@ -1,3 +1,4 @@
+
 {
   "name": "angular-image-spinner",
   "version": "0.1.6",
@@ -37,13 +38,13 @@
     "time-grunt": "~0.2.1",
     "bower": "~1.2.8",
     "grunt-bower-install": "~0.8.0",
-    "karma": "0.12.2",
+    "karma": "^0.13.0",
     "grunt-karma": "latest",
-    "sinon": "latest",
+    "sinon": "~1.7.1",
     "jasmine-sinon": "latest",
     "phantomjs": "~1.9.7-1",
     "karma-phantomjs-launcher": "~0.1.2",
-    "karma-jasmine": "~0.1.5",
+    "karma-jasmine": "^0.3.6",
     "karma-coffee-preprocessor": "~0.2.1",
     "karma-chrome-launcher": "~0.1.3"
   },

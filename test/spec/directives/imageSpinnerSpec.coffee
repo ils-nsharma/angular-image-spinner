@@ -121,8 +121,11 @@ describe 'imageSpinner', ->
             expect(example.find('.spinner-container').css('display')).toEqual('none')
             scope.has = true
             scope.$digest()
-            expect(example.find('.spinner-container .spinner').length).toEqual(1)
-            expect(example.find('.spinner-container').css('display')).toEqual('block')
+
+            run = () ->
+                expect(example.find('.spinner-container .spinner').length).toEqual(1)
+                expect(example.find('.spinner-container').css('display')).toEqual('block')
+            setTimeout(run, 0)
 
     describe 'with ng-hide directive', ->
         beforeEach inject ($rootScope, $compile) ->
@@ -138,7 +141,10 @@ describe 'imageSpinner', ->
             expect(example.find('.spinner-container .spinner').length).toEqual(0)
             scope.has = true
             scope.$digest()
-            expect(example.find('.spinner-container .spinner').length).toEqual(1)
+
+            run = () -> 
+                expect(example.find('.spinner-container .spinner').length).toEqual(1)
+            setTimeout(run, 0)
 
     describe 'with ng-hide and src directive', ->
         beforeEach inject ($rootScope, $compile) ->
@@ -161,10 +167,12 @@ describe 'imageSpinner', ->
             scope.url = 'url'
             scope.$digest()
             expect(example.find('.spinner-container').css('display')).toEqual('block')
-            scope.has = false
-            scope.url = 'url'
+            scope.has = null
+            scope.url = 'url2'
             scope.$digest()
-            expect(example.find('.spinner-container').css('display')).toEqual('none')
+            run = () ->
+                expect(example.find('.spinner-container').css('display')).toEqual('none')
+            setTimeout(run, 0)
 
     describe 'with ng-hide class in the class attribute of the img  tag', ->
         beforeEach inject ($rootScope, $compile) ->
